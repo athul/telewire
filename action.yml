@@ -1,5 +1,5 @@
-name: 'Bridger'
-description: 'Connect your Repo to Telegram'
+name: 'Telewire'
+description: 'Connect your GitHub Repo to Telegram'
 author: 'athul'
 inputs: 
   chat:
