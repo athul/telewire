@@ -16,9 +16,8 @@ const {
     PR_BODY: pbody,
     GITHUB_ACTOR: ghactor,
     GITHUB_SHA: sha,
-    GITHUB_WORKFLOW:ghwrkflw
+    GITHUB_WORKFLOW: ghwrkflw
 } = process.env;
-const tgurl = `https//api.telegram.org/bot${tgtoken}/sendMessage`
 
 
 const evresp = (gevent) => {
@@ -89,10 +88,14 @@ const evresp = (gevent) => {
             `
     }
 }
-const output=evresp(ghevent)
+const output = evresp(ghevent)
 const sendMessage = () => {
     try {
-        axios.post(`${tgurl}?chat_id=${chatid}&parse_mode=Markdown&text=${output}`)
+        axios.post(`https://api.telegram.org/bot${tgtoken}/sendMessage`, {
+            'chat_id' : chatid,
+            'parse_mode':"Markdown",
+            'text':output
+        })
     }
     catch (error) {
         console.error(error)
