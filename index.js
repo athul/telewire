@@ -1,8 +1,8 @@
 require("dotenv").config
 const Bot=require('node-telegram-bot-api');
 const {
-    TELEGRAM_TOKEN: tgtoken,
-    TELEGRAM_CHAT_ID: chatid,
+    token: tgtoken,
+    chat: chatid,
     INPUT_STATUS: ipstatus,
     GITHUB_EVENT_NAME: ghevent,
     GITHUB_REPOSITORY: repo,
@@ -18,9 +18,8 @@ const {
     GITHUB_SHA: sha,
     GITHUB_WORKFLOW:ghwrkflw
 } = process.env;
-const bot=new Bot(tgtoken)
-const tgurl = `https://api.telegram.org/bot${tgtoken}/sendMessage`
 
+const bot=new Bot(tgtoken)
 
 const evresp = (gevent) => {
     switch (gevent) {
