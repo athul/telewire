@@ -90,4 +90,4 @@ const evresp = (gevent) => {
     }
 }
 const output=evresp(ghevent)
-bot.sendMessage(chatid,output)
+bot.sendMessage(chatid,output,{parse_mode : "Markdown"})
