@@ -25,98 +25,98 @@ const evresp = (gevent) => {
     switch (gevent) {
         case "issues":
             return `
-            ❗️❗️❗️❗️❗️❗️
+❗️❗️❗️❗️❗️❗️
         
-        Issue ${prstate}
-        
-        Issue Title and Number  : ${ititle} | #${inum}
-        
-        Commented or Created By : \`${iactor}\`
-        
-        Issue Body : *${ibody}*
-        
-        [Link to Issue]("https://github.com/${repo}/issues/${inum}")
-        [Link to Repo ]("https://github.com/${repo}/")
-        [Build log here]("https://github.com/${repo}/commit/${sha}/checks")
-                `
+Issue ${prstate}
+
+Issue Title and Number  : ${ititle} | #${inum}
+
+Commented or Created By : \`${iactor}\`
+
+Issue Body : *${ibody}*
+
+[Link to Issue]("https://github.com/${repo}/issues/${inum}")
+[Link to Repo ]("https://github.com/${repo}/")
+[Build log here]("https://github.com/${repo}/commit/${sha}/checks")`
         case "issue_comment":
             return `
-            🗣🗣🗣🗣🗣🗣
-        Issue ${prstate}
+🗣🗣🗣🗣🗣🗣
 
-        Issue Title and Number  : ${ititle} | #${inum}
+Issue ${prstate}
 
-        Commented or Created By : \`${iactor}\`
+Issue Title and Number  : ${ititle} | #${inum}
 
-        Issue Body : *${ibody}*
+Commented or Created By : \`${iactor}\`
 
-        Issue Comment: \`${process.env.INPUT_IU_COM}\`
+Issue Body : *${ibody}*
 
-        [Link to Issue]("https://github.com/${repo}/issues/${inum}")
-        [Link to Repo ]("https://github.com/${repo}/")
-        [Build log here]("https://github.com/${repo}/commit/${sha}/checks")
+Issue Comment: \`${process.env.INPUT_IU_COM}\`
+
+[Link to Issue]("https://github.com/${repo}/issues/${inum}")
+[Link to Repo ]("https://github.com/${repo}/")
+[Build log here]("https://github.com/${repo}/commit/${sha}/checks")
             `
         case "pull_request":
             return `
-            🔃🔀🔃🔀🔃🔀
-        PR ${prstate} 
+🔃🔀🔃🔀🔃🔀
+PR ${prstate} 
         
-        PR Number:      ${pnum}
+PR Number:      ${pnum}
         
-        PR Title:       ${ptitle}
+PR Title:       ${ptitle}
         
-        PR Body:        *${pbody}*
+PR Body:        *${pbody}*
         
-        PR By:          ${ghactor}
+PR By:          ${ghactor}
         
-        [Link to Issue]("https://github.com/${repo}/pull/${pnum}")
-        [Link to Repo ]("https://github.com/${repo}/")
-        [Build log here]("https://github.com/${repo}/commit/${sha}/checks")
-            `
+[Link to Issue]("https://github.com/${repo}/pull/${pnum}")
+[Link to Repo ]("https://github.com/${repo}/")
+[Build log here]("https://github.com/${repo}/commit/${sha}/checks")`
         case "watch":
             return `
-            ⭐️⭐️⭐️
-        By:            *${ghactor}* 
+⭐️⭐️⭐️
+
+By:            *${ghactor}* 
         
-        \`Repository:  ${repo}\` 
+\`Repository:  ${repo}\` 
         
-        Star Count      ${process.env.INPUT_STARGAZERS}
+Star Count      ${process.env.INPUT_STARGAZERS}
         
-        Fork Count      ${process.env.INPUT_FORKERS}
+Fork Count      ${process.env.INPUT_FORKERS}
         
-        [Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ]("https://github.com/${repo}/")
             `
         case "schedule":
             return `
-            ⏱⏰⏱⏰⏱⏰
+⏱⏰⏱⏰⏱⏰
         
-        ID: ${ghwrkflw}
+ID: ${ghwrkflw}
         
-        Run *${ipstatus}!*
+Run *${ipstatus}!*
         
-        *Action was Run on Schedule*
+*Action was Run on Schedule*
         
-        \`Repository:  ${repo}\` 
+\`Repository:  ${repo}\` 
         
-        [Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ]("https://github.com/${repo}/")
             `
         default:
             return `
-            ⬆️⇅⬆️⇅
+⬆️⇅⬆️⇅
             
-        ID: ${ghwrkflw}
+ID: ${ghwrkflw}
         
-        Action was a *${ipstatus}!*
+Action was a *${ipstatus}!*
         
-        \`Repository:  ${repo}\` 
+\`Repository:  ${repo}\` 
         
-        On:          *${ghevent}*
+On:          *${ghevent}*
         
-        By:            *${ghactor}* 
+By:            *${ghactor}* 
         
-        Tag:        ${process.env.GITHUB_REF}
+Tag:        ${process.env.GITHUB_REF}
         
-        [Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ]("https://github.com/${repo}/")
             `
     }
 }
