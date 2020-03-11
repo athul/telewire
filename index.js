@@ -4,8 +4,6 @@ const {
     INPUT_STATUS: ipstatus,
     INPUT_TOKEN: tgtoken,
     INPUT_CHAT: chatid,
-    INPUT_GITHUB_EVENT_NAME: ghevent,
-    INPUT_GITHUB_REPOSITORY: repo,
     INPUT_IU_TITLE: ititle,
     INPUT_IU_NUM: inum,
     INPUT_IU_ACTOR: iactor,
@@ -14,6 +12,8 @@ const {
     INPUT_PR_STATE: prstate,
     INPUT_PR_TITLE: ptitle,
     INPUT_PR_BODY: pbody,
+    GITHUB_EVENT_NAME: ghevent,
+    GITHUB_REPOSITORY: repo,
     GITHUB_ACTOR: ghactor,
     GITHUB_SHA: sha,
     GITHUB_WORKFLOW:ghwrkflw
@@ -41,10 +41,10 @@ const evresp = (gevent) => {
             Issue Title and Number  : ${ititle} | #${inum}
             Commented or Created By : \`${iactor}\`
             Issue Body : *${ibody}*
-            Issue Comment: \`${process.env.IU_COM}\`
-            [Link to Issue]("https://github.com/${repo}/issues/${IU_NUM}")
+            Issue Comment: \`${process.env.INPUT_IU_COM}\`
+            [Link to Issue]("https://github.com/${repo}/issues/${inum}")
             [Link to Repo ]("https://github.com/${repo}/")
-            [Build log here]("https://github.com/${repo}/commit/${GITHUB_SHA}/checks")
+            [Build log here]("https://github.com/${repo}/commit/${sha}/checks")
             `
         case "pull_request":
             return `
