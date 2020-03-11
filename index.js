@@ -1,5 +1,5 @@
 require("dotenv").config
-const axios = require('axios');
+const Bot=require('node-telegram-bot-api');
 const {
     TELEGRAM_TOKEN: tgtoken,
     TELEGRAM_CHAT_ID: chatid,
@@ -16,8 +16,10 @@ const {
     PR_BODY: pbody,
     GITHUB_ACTOR: ghactor,
     GITHUB_SHA: sha,
-    GITHUB_WORKFLOW: ghwrkflw
+    GITHUB_WORKFLOW:ghwrkflw
 } = process.env;
+const bot=new Bot(tgtoken)
+const tgurl = `https://api.telegram.org/bot${tgtoken}/sendMessage`
 
 
 const evresp = (gevent) => {
@@ -88,18 +90,5 @@ const evresp = (gevent) => {
             `
     }
 }
-const output = evresp(ghevent)
-const sendMessage = () => {
-    try {
-        axios.post(`https://api.telegram.org/bot${tgtoken}/sendMessage`, {
-            'chat_id' : chatid,
-            'parse_mode':"Markdown",
-            'text':output
-        })
-    }
-    catch (error) {
-        console.error(error)
-    }
-}
-
-sendMessage()
+const output=evresp(ghevent)
+bot.sendMessage(chatid,output)
