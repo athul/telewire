@@ -1,19 +1,19 @@
 require("dotenv").config
 const Bot=require('node-telegram-bot-api');
 const {
-    token: tgtoken,
-    chat: chatid,
     INPUT_STATUS: ipstatus,
-    GITHUB_EVENT_NAME: ghevent,
-    GITHUB_REPOSITORY: repo,
-    IU_TITLE: ititle,
-    IU_NUM: inum,
-    IU_ACTOR: iactor,
-    IU_BODY: ibody,
-    PR_NUM: pnum,
-    PR_STATE: prstate,
-    PR_TITLE: ptitle,
-    PR_BODY: pbody,
+    INPUT_TOKEN: tgtoken,
+    INPUT_CHAT: chatid,
+    INPUT_GITHUB_EVENT_NAME: ghevent,
+    INPUT_GITHUB_REPOSITORY: repo,
+    INPUT_IU_TITLE: ititle,
+    INPUT_IU_NUM: inum,
+    INPUT_IU_ACTOR: iactor,
+    INPUT_IU_BODY: ibody,
+    INPUT_PR_NUM: pnum,
+    INPUT_PR_STATE: prstate,
+    INPUT_PR_TITLE: ptitle,
+    INPUT_PR_BODY: pbody,
     GITHUB_ACTOR: ghactor,
     GITHUB_SHA: sha,
     GITHUB_WORKFLOW:ghwrkflw
@@ -63,8 +63,8 @@ const evresp = (gevent) => {
             ⭐️⭐️⭐️
             By:            *${ghactor}* 
             \`Repository:  ${repo}\` 
-            Star Count      ${process.env.STARGAZERS}
-            Fork Count      ${process.env.FORKERS}
+            Star Count      ${process.env.INPUT_STARGAZERS}
+            Fork Count      ${process.env.INPUT_FORKERS}
             [Link to Repo ]("https://github.com/${repo}/")
             `
         case "schedule":
