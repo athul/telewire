@@ -35,9 +35,9 @@ Commented or Created By : \`${iactor}\`
 
 Issue Body : *${ibody}*
 
-[Link to Issue]("https://github.com/${repo}/issues/${inum}")
-[Link to Repo ]("https://github.com/${repo}/")
-[Build log here]("https://github.com/${repo}/commit/${sha}/checks")`
+[Link to Issue](https://github.com/${repo}/issues/${inum})
+[Link to Repo ](https://github.com/${repo}/)
+[Build log here](https://github.com/${repo}/commit/${sha}/checks)`
         case "issue_comment":
             return `
 🗣🗣🗣🗣🗣🗣
@@ -52,9 +52,9 @@ Issue Body : *${ibody}*
 
 Issue Comment: \`${process.env.INPUT_IU_COM}\`
 
-[Link to Issue]("https://github.com/${repo}/issues/${inum}")
-[Link to Repo ]("https://github.com/${repo}/")
-[Build log here]("https://github.com/${repo}/commit/${sha}/checks")
+[Link to Issue](https://github.com/${repo}/issues/${inum})
+[Link to Repo ](https://github.com/${repo}/)
+[Build log here](https://github.com/${repo}/commit/${sha}/checks)
             `
         case "pull_request":
             return `
@@ -69,9 +69,9 @@ PR Body:        *${pbody}*
         
 PR By:          ${ghactor}
         
-[Link to Issue]("https://github.com/${repo}/pull/${pnum}")
-[Link to Repo ]("https://github.com/${repo}/")
-[Build log here]("https://github.com/${repo}/commit/${sha}/checks")`
+[Link to Issue](https://github.com/${repo}/pull/${pnum})
+[Link to Repo ](https://github.com/${repo}/)
+[Build log here](https://github.com/${repo}/commit/${sha}/checks)`
         case "watch":
             return `
 ⭐️⭐️⭐️
@@ -84,7 +84,7 @@ Star Count      ${process.env.INPUT_STARGAZERS}
         
 Fork Count      ${process.env.INPUT_FORKERS}
         
-[Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ](https://github.com/${repo}/)
             `
         case "schedule":
             return `
@@ -98,7 +98,7 @@ Run *${ipstatus}!*
         
 \`Repository:  ${repo}\` 
         
-[Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ](https://github.com/${repo}/)
             `
         default:
             return `
@@ -116,7 +116,7 @@ By:            *${ghactor}*
         
 Tag:        ${process.env.GITHUB_REF}
         
-[Link to Repo ]("https://github.com/${repo}/")
+[Link to Repo ](https://github.com/${repo}/)
             `
     }
 }
