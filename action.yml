@@ -45,8 +45,8 @@ inputs:
     description: 'Body/Contents of the PR'
     default: ${{ github.event.pull_request.body }}
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "node12"
+  main: "dist/index.js"
 branding:
   icon: 'repeat'  
   color: 'green'
