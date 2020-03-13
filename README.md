@@ -2,7 +2,7 @@
 
 **_Rather than putting the tag, use the latest commit id to improve security_**  
 
-Telewire connects your GitHub Repo to Telegram about Repo Updates by a Bot you can create.
+Telewire connects your GitHub Repo to Telegram about Repo Updates by a Bot you can create. The **execution time for the action is nearly 10s**
 
 Create a chatbot with **botfather** bot in telegram. Get your chat id by speaking to **jsondumpbot** in telegram.
 
