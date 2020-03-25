@@ -1,5 +1,5 @@
 require("dotenv").config
-const Bot=require('node-telegram-bot-api');
+const Telebot = require('telebot');
 const {
     INPUT_STATUS: ipstatus,
     INPUT_TOKEN: tgtoken,
@@ -16,13 +16,14 @@ const {
     GITHUB_REPOSITORY: repo,
     GITHUB_ACTOR: ghactor,
     GITHUB_SHA: sha,
-    GITHUB_WORKFLOW:ghwrkflw
+    GITHUB_WORKFLOW: ghwrkflw
 } = process.env;
 
-const bot=new Bot(tgtoken)
+const bot = new Telebot(tgtoken)
 
 const evresp = (gevent) => {
     switch (gevent) {
+
         case "issues":
             return `
 ❗️❗️❗️❗️❗️❗️
@@ -120,5 +121,5 @@ Tag:        ${process.env.GITHUB_REF}
             `
     }
 }
-const output=evresp(ghevent)
-bot.sendMessage(chatid,output,{parse_mode : "Markdown"})
+const output = evresp(ghevent)
+bot.sendMessage(chatid, output, { parseMode: 'Markdown' })
