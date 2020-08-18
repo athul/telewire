@@ -1,0 +1,22 @@
+name: Notify Events to Telegram
+on:
+  push:
+  pull_request:
+    types: [opened,closed]
+  issues:
+    types: [opened, closed, reopened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send Notification
+      uses: artery-app/Barulhento@master
+      if: always()
+      with:
+        chat: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        status: ${{ job.status }}
+
