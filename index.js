@@ -41,21 +41,16 @@ Issue Body : *${ibody}*
 [Build log here](https://github.com/${repo}/commit/${sha}/checks)`
         case "issue_comment":
             return `
-🗣🗣🗣🗣🗣🗣
+🗣🗣🗣Issueにコメントが付きました🗣🗣🗣
 
-Issue ${prstate}
+Issue : ${ititle} | #${inum}
 
-Issue Title and Number  : ${ititle} | #${inum}
+コメント内容: \`${process.env.INPUT_IU_COM}\`
 
-Commented or Created By : \`${iactor}\`
-
-Issue Body : *${ibody}*
-
-Issue Comment: \`${process.env.INPUT_IU_COM}\`
-
-[Link to Issue](https://github.com/${repo}/issues/${inum})
-[Link to Repo ](https://github.com/${repo}/)
-[Build log here](https://github.com/${repo}/commit/${sha}/checks)
+\`${iactor}\` がコメントしました
+[Issueを開く](https://github.com/${repo}/issues/${inum})
+[Repositoryを開く](https://github.com/${repo}/)
+[Build logを開く](https://github.com/${repo}/commit/${sha}/checks)
             `
         case "pull_request":
             return `
